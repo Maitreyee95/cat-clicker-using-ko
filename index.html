@@ -5,6 +5,9 @@
 	<title>Cat Clicker</title>
 </head>
 <body>
+	<ul data-bind="foreach:catList"> <!--setting binding context to catList-->
+		<li data-bind="text: name,click: $parent.setCat"></li><!--since setCat is a function of viewmodel and not catList-->
+	</ul>
 	<div data-bind="with: currentCat()">
 
 		<h2 data-bind="text:name"></h2>
